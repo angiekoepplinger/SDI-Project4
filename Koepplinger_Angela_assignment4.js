@@ -51,14 +51,17 @@ var titleCase = function (string) {
 	console.log(words);	
 	var result = "";									//console logs the array
 	for (var i=0; i < words.length; i++) {					//loop through the array of words
-		var firstLetter = words[i].charAt(0);				//identify first letter of each word
+		/*var firstLetter = words[i].charAt(0);				//identify first letter of each word
 		var capital = firstLetter.toUpperCase();			//capitalize first letter at words[i], character 0
 		var upperCase = words[i].replace(firstLetter,capital);	//replace firstletter with capitalized version
+		*/
+		var upperCase = words[i].replace(words[i].charAt(0),words[i].charAt(0).toUpperCase()); 
 		console.log(upperCase);
  		result = result.concat(upperCase + " ");
 	};
 	return result;
 };
+
 
 var phrase = "The cow jumped over the moon"
 console.log(titleCase(phrase));
