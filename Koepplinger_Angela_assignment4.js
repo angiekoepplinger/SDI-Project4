@@ -17,6 +17,8 @@ var stringLibrary = function () {
 		var end = string.length;						//define ending position
 		var str3 = string.substring(start, end);
 
+		console.log(str1 + " " + str2 + " " + str3);
+
 		if (!isNaN(str1) && !isNaN(str2) && !isNaN(str3)) {  //if str1,2,3 is not Not a Number(is a number)=true
 			if(str1.length === 3 && str2.length === 3 && str3.length === 4){
 				return true;
@@ -50,14 +52,16 @@ var stringLibrary = function () {
 	};	
 
 	var checkPercent = function (number1, number2, range) {
-		var lessThan = number2 -((range/100)*number2);
-		var moreThan = number2 + ((range/100)*number2);
-		if (number1 < lessThan || number1 > moreThan) {
+		//var lessThan = number2 - ((range/100)*number2);
+		//var moreThan = number2 + ((range/100)*number2);
+		if ((number1 < number2 - ((range/100)*number2)) || (number1 > number2 + ((range/100)*number2))) {
 			return false;
 		} else {
 			return true;
 		};
 	};
+
+
 	
 
 
@@ -90,7 +94,7 @@ var emailCheckResult = checkStrings.checkEmail(emailAddress);
 console.log("emailCheck Result: " + emailCheckResult);
 
 //checkPercent Call
-var no1 = 89
+var no1 = 90
 var no2 = 100
 var percent = 10
 var checkPercent = stringLibrary();
