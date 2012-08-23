@@ -51,9 +51,16 @@ var stringLibrary = function () {
 		};
 	};	
 
+	return {
+		"checkPhone"   : checkPhone,
+		"titleCase"    : titleCase,
+		"checkEmail"   : checkEmail,
+	};
+};		
+
+var mathLibrary = function () {
+
 	var checkPercent = function (number1, number2, range) {
-		//var lessThan = number2 - ((range/100)*number2);
-		//var moreThan = number2 + ((range/100)*number2);
 		if ((number1 < number2 - ((range/100)*number2)) || (number1 > number2 + ((range/100)*number2))) {
 			return false;
 		} else {
@@ -61,17 +68,31 @@ var stringLibrary = function () {
 		};
 	};
 
+	var formatNumber = function (dollars) {
+		var number = parseFloat(dollars.toFixed(2));
+		return number;
+	};
+ 	
+ 	var stringToNum = function (string) {
+ 		var number = parseFloat("42.2")
+ 		return number
+
+
+ 	};
+
+ 	return {
+		"checkPercent" : checkPercent,
+		"formatNumber" : formatNumber,
+		"stringToNum"  : stringToNum
+	};
+
+
+};
 
 	
 
 
-	return {
-		"checkPhone"   : checkPhone,
-		"titleCase"    : titleCase,
-		"checkEmail"   : checkEmail,
-		"checkPercent" : checkPercent
-	};
-};		
+	
 	
 
 // //----------------
@@ -88,7 +109,7 @@ var phrase = "The cow jumped over the moon"
 console.log("titleCase Result: " + checkStrings.titleCase(phrase));
 
 //checkEmail Call
-var emailAddress = "a@b.co@";
+var emailAddress = "a@k.co@";
 var checkStrings = stringLibrary();
 var emailCheckResult = checkStrings.checkEmail(emailAddress);
 console.log("emailCheck Result: " + emailCheckResult);
@@ -97,10 +118,21 @@ console.log("emailCheck Result: " + emailCheckResult);
 var no1 = 90
 var no2 = 100
 var percent = 10
-var checkPercent = stringLibrary();
-var checkPercentResult = checkStrings.checkPercent(no1, no2, percent);
+var checkMath = mathLibrary();
+var checkPercentResult = checkMath.checkPercent(no1, no2, percent);
 console.log("checkPercent Result: " + checkPercentResult);
 
+//formatNumber
+var money = 5.827
+var checkMath = mathLibrary();
+var formatNumberResult = checkMath.formatNumber(money);
+console.log(formatNumberResult);
+
+//stringToNumber
+var stringNum= "42"
+var checkMath = mathLibrary();
+var stringToNumResult = checkMath.stringToNum("42");
+console.log(stringToNumResult);
 
 
 
