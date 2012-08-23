@@ -8,7 +8,7 @@ String
     
     * Title-case a string (split into words, then uppercase the first letter of each word)
     
-    Given a string that is a list of things separated by a given string, as well as another string separator, return a string with the first separator changed to the second: "a,b,c" + "," + "/" → "a/b/c".
+    *Given a string that is a list of things separated by a given string, as well as another string separator, return a string with the first separator changed to the second: "a,b,c" + "," + "/" → "a/b/c".
 
 	
     Number
@@ -16,7 +16,7 @@ String
     
     * Fuzzy-match a number: is the number above or below a number within a certain percent?
     
-    Find the number of hours or days difference between two dates.
+    *Find the number of hours or days difference between two dates.
     
     * Given a string version of a number such as "42", return the value as an actual Number, such as 42.
 
@@ -31,4 +31,5 @@ String
 
 
 
-    
+    str1 = "a,b,c"
+    newstr = str1.replace(,,/);

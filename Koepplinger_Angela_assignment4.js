@@ -94,12 +94,36 @@ var mathLibrary = function () {
 		"stringToNum"   : stringToNum,
 		"compareDates"  : compareDates
 	};
+};	
 
-};
+//Array Class
+var arrayLibrary =  function () {
+
+	var smallestValue = function (arr, num) {
+		var initialSort = arr.sort(function(a,b) {return a-b});
+		if ((num < initialSort[0]) || (num > initialSort[initialSort.length])) {
+			return null;
+		} else {
+			var addNum = arr.push(num);
+			var sortArray = arr.sort(function(a,b) {return a-b});
+			var index = arr.indexOf(num)+1;
+			var result = sortArray[index];
+			console.log(sortArray);
+			return result;
+		};
+	};	
+	return {
+		"smallestValue" : smallestValue
+	};
+};	
+
+
+
 
 //Global Variables
 var checkStrings = stringLibrary();
-var checkMath = mathLibrary();	
+var checkMath    = mathLibrary();	
+var checkArray   = arrayLibrary();
 
 //STRING CALLS::
 //checkPhone
@@ -145,6 +169,12 @@ console.log(compareDatesResult[0] + " days, or " + compareDatesResult[1] + " hrs
 var stringToNumResult = checkMath.stringToNum("42");
 console.log(stringToNumResult);
 
+//ARRAY CALLS
+//smallestValue
+var array  = [10,50,30,60,40];
+var number = 35;
+var smallestValueResult = checkArray.smallestValue(array, number);
+console.log(smallestValueResult);
 
 
 
